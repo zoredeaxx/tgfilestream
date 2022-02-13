@@ -27,8 +27,8 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.environ["TG_API_ID"])
-    api_hash = os.environ["TG_API_HASH"]
+    api_id = int(os.environ.get("TG_API_ID","7523379"))
+    api_hash = os.environ.get("TG_API_HASH","ce43762f206dc2a2eb115986fbe3b4a2")
 except (KeyError, ValueError):
     print("Please set the TG_API_ID and TG_API_HASH environment variables correctly")
     print("You can get your own API keys at https://my.telegram.org/apps")
@@ -61,4 +61,4 @@ except ValueError:
 start_message = os.environ.get("TG_START_MESG", "Send an image or file to get a link to download it")
 group_chat_message = os.environ.get("TG_G_C_MESG", "Sorry. But, I only work in private.")
 
-tg_bot_token = os.environ.get("TG_BOT_FATHER_TOKEN", None)
+tg_bot_token = os.environ.get("TG_BOT_FATHER_TOKEN", "5255818430:AAHWiVqgHgHgT7EtDojkvAVULtwtAuJc-CQ")
